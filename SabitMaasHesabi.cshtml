@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model SabitMaasHesabi
+
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <table>
+                <tr>
+                    <td style="color:darkblue;font-size:20px;"> Çalışma Saatinizi Giriniz : </td>
+                    <td>@Html.EditorFor(saat => saat.Calisma_Saati)</td>
+                </tr>
+                <tr>
+                    <td style="color:darkblue;font-size:20px;"> Saatlik Ücretinizi Giriniz : </td>
+                    <td>@Html.EditorFor(ucret => ucret.Saatlik_Ucret)</td>
+                </tr>
+                 <tr>
+                    <td style="color:darkblue;font-size:20px;"> Çocuk Sayısını Giriniz : </td>
+                    <td>@Html.EditorFor(cocuk => cocuk.Cocuk_Sayisi)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Maaş Hesapla" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>@ViewBag.Message</td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>
